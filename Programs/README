@@ -1,0 +1,9 @@
+Build Instructions:
+
+1. Makefile has been provided to make the execution of any code simpler
+
+2. To compile and run any code: make file=file_name_without_c_extension
+
+3. To compile only: make compile file=file_name_without_extension
+
+4. To run only: make run file=object_file_name

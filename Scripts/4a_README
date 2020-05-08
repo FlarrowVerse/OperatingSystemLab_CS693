@@ -1,0 +1,4 @@
+Build instructions for 4(a):
+
+1. chmod +x studentOps.sh
+2. ./studentOps.sh student

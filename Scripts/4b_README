@@ -1,0 +1,4 @@
+Build instructions for 4(b):
+
+1. chmod +x getHighestMarks.sh
+2. ./getHighestMarks.sh marksheets
