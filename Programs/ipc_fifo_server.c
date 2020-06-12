@@ -6,7 +6,7 @@
 #include <string.h>
 #include <stdlib.h>
 
-#define FIFO_FILE "MYFIFO"
+#define FIFO_FILE "FIFO_BUFF"
 #define MAX 1024
 
 int main() {

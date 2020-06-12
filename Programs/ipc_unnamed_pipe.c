@@ -12,7 +12,7 @@ int main() {
 	char message [100]; /* Parent process’s message buffer */
 	pipe(fd); /*Create an unnamed pipe*/
 	if (fork() == 0) {
-		printf("***************CHILD PROCESS**********************\n");
+		printf(">>>>>>>>>>>>>>>CHILD PROCESS>>>>>>>>>>>>>>>>>>>>>>>>>\n");
 		close(fd[READ]); /* Close unused end*/
 
 		printf("Enter a message: ");
@@ -21,7 +21,7 @@ int main() {
 
 		write(fd[WRITE], phrase, strlen ( phrase) +1); /* include NULL*/
 		close(fd[WRITE]); /* Close used end*/
-		printf("***************CHILD PROCESS END**********************\n");
+		printf(">>>>>>>>>>>>>>>CHILD PROCESS END>>>>>>>>>>>>>>>>>>>>>>>>>\n");
 	} else {
 		printf("***************PARENT PROCESS**********************\n");
 		close(fd[WRITE]); /* Close unused end*/ 

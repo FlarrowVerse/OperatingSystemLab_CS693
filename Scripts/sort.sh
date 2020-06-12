@@ -5,41 +5,34 @@ sort()
 	arr=("${!1}")
 	len=${#arr[*]}
 
-	outer=`expr $len - 1`
-
-	#echo $len' of array '${arr[*]}
+	# outer=`expr $len - 1`
 	
-	for (( i=0; i <= $outer; i++ ))
+	for (( i=0; i <= ($len - 1); i++ ))
 	do
-		inner=`expr $len - $i`
-		for (( j=0; j < $inner; j++ ))
+		for (( j=0; j < ($len - $i - 1); j++ ))
 		do
-			curr=${arr[$j]}
-			next=${arr[`expr $j + 1`]}
-
-			#echo $curr' > '$next
-
-			if [[ $curr -gt $next ]];
+			if [[ ${arr[$j]} -gt ${arr[$j + 1]} ]];
 			then
-				arr[$j]=$next
-				arr[`expr $j + 1`]=$curr
+				temp=${arr[$j]}
+				arr[$j]=${arr[$j + 1]}
+				arr[($j + 1)]=$temp
 			fi
 		done
 	done
-
-	echo ${arr[*]}
+	echo "Sorted Array: ${arr[*]}"
 }
 
 echo -n 'Enter number of elements: '
 read n
 
 declare -a arr
-
 for(( i=0; i<$n; i++  ))
 do
 	echo -n 'arr['$i'] = '
 	read input	
 	arr[$i]=$input
 done
+
+echo "Original Array: ${arr[*]}"
 
 sort arr[@]

@@ -22,10 +22,6 @@ END {
 		cmd = "tr [a-z] [A-Z]";
 
 		print student[roll[i]] | cmd;
-#		close(cmd, "to");
-#		cmd |& getline out;
-#		print student[roll[i]] | cmd;
-#		print out > "output";
 	}
 }
 
